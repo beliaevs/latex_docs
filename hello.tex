@@ -4,6 +4,7 @@
 \usepackage[T2A]{fontenc}
 %% \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
+\usepackage{tikz}
 \linespread{1.3}
 
 \begin{document}
@@ -28,10 +29,30 @@
     числом.
 
     \subsection{Деление}
-    Кучу из 10 яблок нельзя разделить между тремя детьми поровну.
+    \begin{figure}[h]
+        \centering
+    \begin{tikzpicture}
+        \filldraw[black] (0, 0) circle (10pt) ;
+        \filldraw[black] (1, 0) circle (10pt) ;
+        \filldraw[black] (2, 0) circle (10pt) ;
+        \filldraw[black] (3, 0) circle (10pt) ;
+        \draw[black] (4, 0) circle (10pt) ;
+        \filldraw[black] (0, 1) circle (10pt) ;
+        \filldraw[black] (1, 1) circle (10pt) ;
+        \filldraw[black] (2, 1) circle (10pt) ;
+        \filldraw[black] (3, 1) circle (10pt) ;
+        \filldraw[black] (0, 2) circle (10pt) ;
+        \filldraw[black] (1, 2) circle (10pt) ;
+        \filldraw[black] (2, 2) circle (10pt) ;
+        \filldraw[black] (3, 2) circle (10pt) ;
+    \end{tikzpicture}
+\end{figure}
+
+    Кучу из 13 яблок нельзя разделить между тремя детьми поровну.
     Зато \emph{деление с остатком} выполнимо всегда. Например,
-    из 10 яблок можно 9 раздать детям, каждому по 3, а 
-    одно --- оставить. Подумай, почему любое количество яблок 
+    из 13 яблок можно 12 раздать детям, каждому по 4, а 
+    одно --- оставить.
+    Подумай, почему любое количество яблок 
     можно разделить на 3 равные кучи так, что оставить придется не 
     больше двух яблок.
     \[
