@@ -2,6 +2,12 @@
 
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{amsmath}
+
+\usepackage{dsfont}
+\usepackage{bbm}
+
+\DeclareMathOperator{\amp}{\&}
 
 \begin{document}
 Greek letters:
@@ -33,7 +39,10 @@ Blackboard bold letters:
         \mathbb{A, B, C, D, E, F, G, H, I, J, K, L, M, N ,O, P,
         Q, R, S, T, U, V, W, X, Y, Z}
     \]
-
+Blackboard bold numbers (bbm is strange and pixelated):
+\[
+    \mathds{1}, \mathbbm{1, 2}
+    \]
 Set operations:
     \[
         C = A\cap B,\, C = A\cup B, \, C = A\setminus B 
@@ -45,8 +54,20 @@ More operations:
     \]
 
 Product set:
-\[
-    A\times B = \{ (a, b): a\in A \wedge b\in B \} 
-    \]
+\begin{align*}
+    A\times B &= \{ (a, b): a\in A \amp b\in B \} \\
+    A\cap B &= \{ x: x\in A\:\&\: x\in B \}  
+\end{align*}
+
+Binary relations:
+\begin{align*}
+    \alpha&\subset Y\times Z, \, \beta\subset X\times Y\\
+    \alpha\circ\beta &= \{(x, z): \exists y\in Y\, (x, y)\in\beta\amp (y, z)\in\alpha\} 
+\end{align*}
+Underbrace:
+\begin{align*}
+\underbrace{a+a+\ldots+a}_n &= na \\
+\underbrace{a\cdot a\cdot\ldots\cdot a}_n &= a^n
+\end{align*}
 
 \end{document}

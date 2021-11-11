@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\newtheorem{definition}{Definition}
+\newtheorem{thm}{Theorem}
+
+\begin{document}
+\begin{definition}
+    Let $(S, \cdot)$ be a set with binary operation. 
+    Then $S$ called a semigroup, if operation $\cdot$ is accociative, namely,
+    \[
+        (a\cdot b)\cdot c= a\cdot (b\cdot c)
+        \] 
+    for all elements $a, b, c$ from $S$.
+\end{definition}
+
+\begin{thm}
+    Let $S$ be a semigroup with the property:
+    \[
+        aS = S,\;Sa=S    
+    \]
+    for all $a\in S$. Then S is a group.
+\end{thm}
+\begin{proof}
+    We show that $S$ has a left unit and left inverse.
+
+    Choose an arbitrary element $a\in S$. There exists $e_a\in S$ such that $e_a\cdot a = a$.
+    Lets check that $e_a$ is a left unit. For every $x\in S$ there exists 
+    $y\in S$ such that $x = a\cdot y$. Then
+    \[
+        e_a\cdot x = e_a\cdot(a\cdot y) = (e_a\cdot a)\cdot y=a\cdot y=x
+        \]
+    Therefore, $e_a$ is a left unit.
+
+    If $x\in S$, then there is an element $y$ such that $y\cdot x=e_a$, i.e. $y=x^{-1}$
+    is a left inverse for $x$.
+\end{proof}
+\end{document}
