@@ -19,6 +19,34 @@
 \end{definition}
 
 \begin{thm}
+    Let S be a semigroup such that
+    \begin{align}
+        \exists e_l\in S\;\forall x\;\; e_l\cdot x &= x\\
+        \forall x\;\exists x^{-1}\;\; x^{-1}\cdot x &= e_l 
+    \end{align}
+    Then $S$ is a group.
+\end{thm}
+\begin{proof}
+There are no idempotents in $S$ except $e_l$. Indeed, if $a=a\cdot a$ is an 
+idempotent, then
+\[
+a = e_l\cdot a = (a^{-1}\cdot a)\cdot a = 
+a^{-1}\cdot(a\cdot a) = a^{-1}\cdot a = e_l
+\]
+Lets check that left inverse is also a right inverse. For any $x\in S$ we have
+\[
+    (x\cdot x^{-1})\cdot (x\cdot x^{-1}) = x\cdot(x^{-1}\cdot x)\cdot x^{-1} =
+    x\cdot e_l\cdot x^{-1} = x\cdot x^{-1}
+\]
+Therefore $x\cdot x^{-1}$ is an idempotent and must be equal to $e_l$.
+Lets show that the left unit $e_l$ is a right unit. For any $x\in S$
+\[
+    x\cdot e_l = x\cdot(x^{-1}\cdot x) = (x\cdot x^{-1})\cdot x = 
+    e_l\cdot x = x
+\]
+\end{proof}
+
+\begin{thm}
     Let $S$ be a semigroup with the property:
     \[
         aS = S,\;Sa=S    
@@ -26,7 +54,7 @@
     for all $a\in S$. Then S is a group.
 \end{thm}
 \begin{proof}
-    We show that $S$ has a left unit and left inverse.
+    We show that $S$ has a left unit and a left inverse.
 
     Choose an arbitrary element $a\in S$. There exists $e_a\in S$ such that $e_a\cdot a = a$.
     Lets check that $e_a$ is a left unit. For every $x\in S$ there exists 
