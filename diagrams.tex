@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{tikz-cd}
+
+\newtheorem{thm}{Theorem}
+\DeclareMathOperator{\Image}{Im}
+
+\begin{document}
+
+\begin{thm}
+    Let $X, Y, Z$ be sets, $f:X\to Y,\,g:X\to Z$ are mappings. Then there exists $h: Y\to Z$ 
+    such that the diagram
+    \[
+    \begin{tikzcd}
+        X\arrow[rd, "g"] \arrow[r, "f"] & Y \arrow[d, "h"] \\
+                                        & Z 
+    \end{tikzcd}
+    \]   
+    is commutative iff for all $x_1, x_2\in X$
+    \[
+        f(x_1)=f(x_2) \Rightarrow g(x_1)=g(x_2) 
+    \] 
+
+\end{thm}
+
+\begin{thm}
+    Let $X, Y, Z$ be sets, $f:X\to Z,\,g:Y\to Z$ are mappings. 
+    Then there exists $h: X\to Y$ such that the diagram
+    \[
+    \begin{tikzcd}
+        X\arrow[d, "h"] \arrow[r, "f"] & Z \\
+        Y\arrow[ru, "g"] & 
+    \end{tikzcd}
+    \]   
+    is commutative iff\, $\Image f \subset  \Image g$
+\end{thm}
+
+\end{document}
