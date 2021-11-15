@@ -7,17 +7,26 @@
 
 \newtheorem{definition}{Definition}
 \newtheorem{thm}{Theorem}
-
+\title{Semigroups}
 \begin{document}
+\maketitle
 \begin{definition}
     Let $(S, \cdot)$ be a set with binary operation. 
-    Then $S$ called a semigroup, if operation $\cdot$ is accociative, namely,
+    Then $S$ called a \textbf{semigroup}, if operation $\cdot$ is accociative, namely,
     \[
         (a\cdot b)\cdot c= a\cdot (b\cdot c)
         \] 
     for all elements $a, b, c$ from $S$.
 \end{definition}
-
+\begin{definition}
+    Let $S$ be a semigroup. If it has a unit and every element 
+    has an inverse, or formally:
+    \begin{align}
+        \exists e&\in S\;\forall x\quad e\cdot x=x\cdot e = x\\
+        \forall x&\in S\;\exists x'\quad x\cdot x'= x'\cdot x = e
+    \end{align}
+    then it is called a \textbf{group}.
+\end{definition}
 \begin{thm}
     Let S be a semigroup such that
     \begin{align}
