@@ -1,5 +1,9 @@
-\documentclass{article}
+\documentclass[a4paper, 12pt]{article}
 
+%\usepackage[T2A]{fontenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -10,8 +14,7 @@
 \DeclareMathOperator{\Image}{Im}
 
 \begin{document}
-
-\begin{thm}
+\begin{thm}\label{RelImages}
     Let $X, Y, Z$ be sets, $f:X\to Y,\,g:X\to Z$ are mappings. Then there exists $h: Y\to Z$ 
     such that the diagram
     \[
@@ -24,7 +27,8 @@
     is commutative iff for all $x_1, x_2\in X$
     \[
         f(x_1)=f(x_2) \Rightarrow g(x_1)=g(x_2) 
-    \] 
+    \]
+    Moreover, such $h$ is unique iff\, $Y=\Image f$ 
 \end{thm}
 \begin{proof}
     Lets define $h$ as follows:
@@ -32,7 +36,7 @@
         h(y) = 
         \begin{cases}
             g(f^{-1}(y)), & y\in \Image f\\
-            \text{any}, & \text{otherwise} 
+            \text{any element}\, z\in Z, & y\notin \Image f 
         \end{cases}
     \]
     The definition is correct because for all $x\in f^{-1}(y)$ $g(x)$ is the same.
@@ -55,4 +59,40 @@
     the preimage is non-empty by condition.
 \end{proof}
 
+\begin{thm}
+    Let $X, Y$ be sets, $f, g:X\to Y$ are mappings. Then there exists
+    a set $O$ and a mapping $\pi: Y\to O$ such that $\pi\circ f=\pi\circ g$
+    and for any set $O'$ and mapping $\pi':Y\to O',\; \pi'\circ f = \pi'\circ g$
+    there exists unique $h:O\to O'$ such that 
+    the diagram is commutative: 
+    \[
+    \begin{tikzcd}[row sep=tiny]
+        &                     &   O\arrow[dd, dashrightarrow, "h"]\\ 
+        X\arrow[r, bend left=20, "f"]\arrow[r, bend right=20, "g"{below}]& Y\arrow[ur, "\pi"]\arrow[dr, "\pi'"] & \\
+        &                     &   O'\\
+    \end{tikzcd}
+    \]
+\end{thm}
+\begin{proof}
+    Let $I=\Image f\cup \Image g$, then define
+    \[
+        O=(I/\thicksim )\sqcup (Y\setminus I)
+    \]
+    where $\thicksim$ is a minimal equivalence that contains the following 
+    relation on $I$:
+    \[
+        \{(a, b): \exists x\in X\,f(x)=a \land  g(x)=b\}
+    \]
+    Then lets define
+    \[
+        \pi(y)=
+        \begin{cases}
+            [y],&y\in I\\
+            y,&y\notin I
+        \end{cases}
+    \]
+    Now $h$ exists and unique according to the theorem \ref{RelImages}
+    because it is clear that $\pi(y_1)=\pi(y_2) \Rightarrow
+    \pi'(y_1)=\pi'(y_2)$
+\end{proof}
 \end{document}
