@@ -15,7 +15,7 @@
 
 \begin{document}
 \begin{thm}\label{RelImages}
-    Let $X, Y, Z$ be sets, $f:X\to Y,\,g:X\to Z$ are mappings. Then there exists $h: Y\to Z$ 
+    Let $X, Y, Z$ be sets, $f:X\to Y,\,g:X\to Z$ be mappings. Then there exists $h: Y\to Z$ 
     such that the diagram
     \[
     \begin{tikzcd}[row sep = tiny]
@@ -59,7 +59,7 @@
     the preimage is non-empty by condition.
 \end{proof}
 
-\begin{thm}
+\begin{thm}[coequalizer existence]
     Let $X, Y$ be sets, $f, g:X\to Y$ are mappings. Then there exists
     a set $O$ and a mapping $\pi: Y\to O$ such that $\pi\circ f=\pi\circ g$
     and for any set $O'$ and mapping $\pi':Y\to O',\; \pi'\circ f = \pi'\circ g$
@@ -69,30 +69,52 @@
     \begin{tikzcd}[row sep=tiny]
         &                     &   O\arrow[dd, dashrightarrow, "h"]\\ 
         X\arrow[r, bend left=20, "f"]\arrow[r, bend right=20, "g"{below}]& Y\arrow[ur, "\pi"]\arrow[dr, "\pi'"] & \\
-        &                     &   O'\\
+        &                     &   O'
     \end{tikzcd}
     \]
 \end{thm}
 \begin{proof}
-    Let $I=\Image f\cup \Image g$, then define
+    Let $O=Y/\thicksim$, where $\thicksim$ is a minimal equivalence that contains the following 
+    relation on $Y$:
+
     \[
-        O=(I/\thicksim )\sqcup (Y\setminus I)
+        \{(a, b)\in Y^2: \exists x\in X\,f(x)=a \land  g(x)=b\}
     \]
-    where $\thicksim$ is a minimal equivalence that contains the following 
-    relation on $I$:
-    \[
-        \{(a, b): \exists x\in X\,f(x)=a \land  g(x)=b\}
-    \]
-    Then lets define
-    \[
-        \pi(y)=
-        \begin{cases}
-            [y],&y\in I\\
-            y,&y\notin I
-        \end{cases}
-    \]
+    Then $\pi(x)=[x]_\thicksim$ is a natural projection.
     Now $h$ exists and unique according to the theorem \ref{RelImages}
     because it is clear that $\pi(y_1)=\pi(y_2) \Rightarrow
-    \pi'(y_1)=\pi'(y_2)$
+    \pi'(y_1)=\pi'(y_2)$ and $\pi$ is surjective.
+\end{proof}
+\begin{thm}[pushout existence]
+Let $X, Y, Z$ be sets, $f:X\to Y$ and\\ $g:X\to Z$ be mappings. Then there exists a set $P$
+and mappings $\pi_1: Y\to P$ and $\pi_2: Z\to P$ such that the following diagram is commutative:
+\[
+    \begin{tikzcd}
+       X\arrow[r, "f"]\arrow[d, "g"] & Y\arrow[d, "\pi_1"{left}]\\
+       Z\arrow[r, "\pi_2"] & P
+    \end{tikzcd}
+\]
+Moreover, for any set $P'$ and 
+mappings $\pi'_1:Y\to P'$ and $\pi'_2:Z\to P'$ with the same property there exists a unique $h:P\to P'$ 
+such that the diagram
+\[
+    \begin{tikzcd}
+       X\arrow[r, "f"]\arrow[d, "g"] & Y\arrow[d, "\pi_1"{left}]\arrow[ddr, "\pi'_1"] & \\
+       Z\arrow[r, "\pi_2"]\arrow[drr, "\pi'_2"{below}] & P\arrow[dr, dashrightarrow, "h"{above}] & \\
+       & & P'
+    \end{tikzcd}
+\]
+is commutative.
+\end{thm}
+\begin{proof}
+    Let $P=(Y\sqcup X)/\thicksim$, where $\thicksim$ is an equivalence generated 
+    by the relation 
+    \[
+        \{(y, z): \exists x\in X\, y = f(x)\land z=g(x) \}
+    \]
+    If $i_1:X\to Y\sqcup X, i_2:Y\to Y\sqcup X$ are natural inclusions
+    and $\pi: Y\sqcup X\to P$ is a projection,
+    then $\pi_1=\pi \circ i_1, \pi_2=\pi \circ i_2$ are mappings in question.
+    Again, the theorem \ref{RelImages} gives the second part of the claim.
 \end{proof}
 \end{document}
