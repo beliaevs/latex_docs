@@ -107,14 +107,17 @@ such that the diagram
 is commutative.
 \end{thm}
 \begin{proof}
-    Let $P=(Y\sqcup X)/\thicksim$, where $\thicksim$ is an equivalence generated 
-    by the relation 
-    \[
-        \{(y, z): \exists x\in X\, y = f(x)\land z=g(x) \}
-    \]
-    If $i_1:X\to Y\sqcup X, i_2:Y\to Y\sqcup X$ are natural inclusions
-    and $\pi: Y\sqcup X\to P$ is a projection,
-    then $\pi_1=\pi \circ i_1, \pi_2=\pi \circ i_2$ are mappings in question.
-    Again, the theorem \ref{RelImages} gives the second part of the claim.
+   Consider the diagram
+   \[
+        \begin{tikzcd}
+            X\arrow[rr, "f"]\arrow[dd, "g"] & & Y\arrow[ld, "i_1"]\arrow[dd, "\pi\circ i_1"] \\
+            & Y\sqcup Z\arrow[rd, "\pi"] & \\
+            Z\arrow[ru, "i_2"]\arrow[rr, "\pi\circ i_2"] & & O
+        \end{tikzcd}
+   \]
+   where $\pi$ is a coequalizer of $i_1\circ f$ and $i_2\circ g$. It is clear
+   that $O$ is a pushout.
 \end{proof}
+
+
 \end{document}
