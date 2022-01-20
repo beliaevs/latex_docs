@@ -1,0 +1,32 @@
+\documentclass[14pt, a4paper]{extarticle}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\pagestyle{empty}
+
+\begin{document}
+\section*{Множества и таблицы}
+Пусть есть множества $A = \{1; \star; b; 2\}$, 
+$B = \{a;2;\bigcirc\}$ и $C = \{2; \bullet; \bigcirc; \star\}$. Составим таблицу:
+
+\begin{center}
+    \begin{tabular}{r|c|c|c|c|c|c|c}
+                   & 1 & 2 & $a$ & $b$ & $\star$ & $\bigcirc$ & $\bullet$\\
+        \hline
+    $A$            & 1 & 1 &  0  & 1   &   1     &  0 & 0\\
+    $B$            & 0 & 1 &  1  & 0   &   0     &  1 & 0\\
+    $C$            & 0 & 1 &  0  & 0   &   1     &  1 & 1\\
+    $A\cup B$      &   &   &     &     &         &    &  \\
+    $A\cap B$      &   &   &     &     &         &    &  \\
+    $A\cap B\cup C$&   &   &     &     &         &    &  \\
+    $\varnothing$  &   &   &     &     &         &    & 
+
+    \end{tabular}
+\end{center}
+Заполни в этой таблице незаполненные строки.
+
+\end{document}
