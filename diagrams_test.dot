@@ -1,0 +1,11 @@
+digraph Chain {
+    rankdir="LR"
+    subgraph Subchain {
+        node[style=filled, color=lightgrey, shape=box] 
+        D->E
+    }
+    A->B 
+    B->C
+    C->D
+    E->F
+}
