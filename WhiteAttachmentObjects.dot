@@ -1,0 +1,21 @@
+digraph WhiteAttachments {
+    node [shape=record];
+    Scene -> JawPair -> Jaw -> JawScan;
+    
+    status [label="<detectstatus>WaarDetectionStatus | {Reliable | true}"];
+   
+    JawScan -> status:detectstatus;
+    
+    WAInitialGeometry1 [label="WhiteAttachmentInitialGeometry"];
+    WAUnderGeom1 [label = "Under WA QPG"];
+    WAOverGeom1 [label = "Over WA QPG"];
+    WAInitialGeometry1 -> {WAUnderGeom1, WAOverGeom1};
+    JawScan -> WAInitialGeometry1;
+    Jaw -> {Tooth1, Tooth2};
+    WhiteAttachment1[label = "WhiteAttachment"];
+    WhiteAttachment2[label = "WhiteAttachment"];
+    Tooth1 -> {WhiteAttachment1, WhiteAttachment2};
+    WAMark1 [label = "<WAMark>WhiteAttachmentMark|{found|2}"];
+    Tooth1 -> WAMark1:WAMark;
+    Tooth2 -> RemovedAttachment;
+}
