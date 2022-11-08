@@ -4,7 +4,7 @@ digraph WhiteAttachments {
     
     status [label="<detectstatus>WaarDetectionStatus | {Reliable | true}"];
    
-    JawScan -> status:detectstatus;
+    JawScan -> status;
     
     WAInitialGeometry1 [label="WhiteAttachmentInitialGeometry"];
     WAUnderGeom1 [label = "Under WA QPG"];
