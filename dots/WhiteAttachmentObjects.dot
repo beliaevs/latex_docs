@@ -12,10 +12,11 @@ digraph WhiteAttachments {
     WAInitialGeometry1 -> {WAUnderGeom1, WAOverGeom1};
     JawScan -> WAInitialGeometry1;
     Jaw -> {Tooth1, Tooth2};
-    WhiteAttachment1[label = "WhiteAttachment"];
-    WhiteAttachment2[label = "WhiteAttachment"];
+    WhiteAttachment1[style = bold, label = "WhiteAttachment"];
+    WhiteAttachment2[style = bold, label = "WhiteAttachment"];
     Tooth1 -> {WhiteAttachment1, WhiteAttachment2};
-    WAMark1 [label = "<WAMark>WhiteAttachmentMark|{found|2}"];
-    Tooth1 -> WAMark1:WAMark;
+    WAMark1 [style = bold, label = "<WAMark>WhiteAttachmentMark|{found|2}"];
+    Tooth1 -> WAMark1;
+    RemovedAttachment[style = bold];
     Tooth2 -> RemovedAttachment;
 }
