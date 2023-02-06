@@ -1,0 +1,49 @@
+\documentclass[a4paper, 12pt]{article}
+
+%\usepackage[T2A]{fontenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\title{Finite Fields}
+\author{Alexander Beliaev}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+We show that there exist finite fields with number of elements $p^n$, where $p$ is prime.
+
+\section{Definitions}
+Lets recall necessary definitions of algebraic objects.
+
+\begin{definition}
+A \textbf{group} is a set $G$ with binary operation $\cdot$ such that
+for every elements $a, b, c\in G$
+\begin{enumerate}
+    \item $(a\cdot b) \cdot c = a\cdot (b\cdot c)$
+    \item there is an element $e\in G$ such that $e\cdot a = a\cdot e = a$
+    \item there is an elemet $a^{-1}$ such that $a\cdot a^{-1}=a^{-1}\cdot a = e$
+\end{enumerate}
+$e$ and $a^{-1}$ are called \textbf{unit} and \textbf{inverse}.
+\end{definition} 
+
+\begin{definition}
+A group $G$ is called \textbf{abelian} if it has a property:
+$$
+a\cdot b=b\cdot a
+$$
+for every $a, b\in G$. The operation $\,\cdot\, $ is called \textbf{commutative}
+in this case. 
+\end{definition}
+
+Operation 
+\end{document}

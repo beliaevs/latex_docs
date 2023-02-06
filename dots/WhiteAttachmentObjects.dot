@@ -19,4 +19,6 @@ digraph WhiteAttachments {
     Tooth1 -> WAMark1;
     RemovedAttachment[style = bold];
     Tooth2 -> RemovedAttachment;
+    WhiteAttachmentDetectorMark[style=bold, label="WhiteAttachmentDetectorMark|{d_versionId|PreservedWADetectorOnPorting}"];
+    Jaw -> WhiteAttachmentDetectorMark;
 }
