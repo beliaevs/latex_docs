@@ -1,0 +1,112 @@
+\documentclass[a4paper, 12pt]{article}
+
+%\usepackage[T2A]{fontenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\begin{document}
+We present classical formulas for solving quadratic, cubic and quartic equations.
+
+\section{Quadratic equation}
+Consider the equation  
+\[
+    ax^2+bx+c=0, \quad a\neq 0
+\]
+Dividing by $a$ we optain \textit{monic} equation
+\[
+    x^2+px+q=0
+\] 
+where $p=b/a,\,q=c/a$. Substitution $x=y-p/2$ will give
+\[
+    (y-p/2)^2+p(y-p/2)+q=y^2+q-p^2/4=0
+\]
+This gives
+\[
+    y=\pm\frac{1}{2}\sqrt{p^2-4q}
+\]
+Returning back to $x$:
+\[
+    x = -\frac{p}{2}\pm\frac{1}{2}\sqrt{p^2-4q}
+\]
+\section{Cubic equation}
+Consider an equation
+\[
+    x^3+ax^2+bx+c=0
+\]
+Substitute $x=y-a/3$:
+\[
+    (y-a/3)^3+a(y-a/3)^2+b(y-a/3)+c=y^3+(b-a^2/3)y+\frac{2}{27}a^3-\frac{ab}{3}+c=0
+\]
+So we can solve only reduced cubic equation
+\[
+x^3+px+q=0    
+\] 
+Take $x=u+v$, then $(u+v)^3=u^3+v^3+3uv(u+v)$ and
+\[
+u^3+v^3+(3uv+p)(u+v)+q=0    
+\]
+Lets try to satisfy two conditions simultaneously
+\begin{align*}
+    u^3+v^3 &= -q\\
+    uv &= -\frac{p}{3}
+\end{align*}
+It follows that $u^3$ and $v^3$ are roots of quadratic
+equation 
+\[
+    t^2+qt-(p/3)^3=0
+\]
+Therefore,
+\begin{align*}
+    u^3 &= -\frac{q}{2}+\sqrt{(q/2)^2+(p/3)^3}\\
+    v^3 &= -\frac{q}{2}-\sqrt{(q/2)^2+(p/3)^3}
+\end{align*}
+Finally, back to $x$:
+\[
+    x=\sqrt[3]{-\frac{q}{2}+\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}}+\sqrt[3]{-\frac{q}{2}-\sqrt{\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3}}
+\]
+or 
+\begin{align*}
+    x&=\sqrt[3]{-\frac{q}{2}+\sqrt{D}}+\sqrt[3]{-\frac{q}{2}-\sqrt{D}}\\
+    D&=\left(\frac{q}{2}\right)^2+\left(\frac{p}{3}\right)^3
+\end{align*}
+If $x=u+v$ is a root, then $\omega u + \omega^2 v$ and $\omega^2 u+\omega v$ are also roots, where $\omega^3=1$ is a complex cubic root of unity.
+\section{Quartic equation}
+Consider reduced quartic equations
+\[
+x^4+px^2+qx+r=0
+\]
+Lets find its factorization into 2 quadratic polynomials:
+\[
+    x^4+px^2+qx+r=(x^2+ax+b)(x^2-ax+c)
+\]
+Coefficients before $x$ are $a$ and $-a$ because of absent $x^3$ term.
+Comparing corresponding coefficients:
+\begin{align*}
+    c+b &=p+a^2\\
+    a(c-b) &=q\\
+    bc &= r
+\end{align*} 
+Finding $b$ and $c$:
+\begin{align*}
+    2b &= p+a^2-q/a\\
+    2c &= p+a^2+q/a\\
+    bc &= r
+\end{align*}
+After substition into third equation:
+\[
+    (a^3+pa-q)(a^3+pa+q)=4ra^2    
+\]
+or
+\[
+    a^6+2pa^4+(p^2-4r)a^2-q^2=0
+\]
+Therefore we have cubic equation for $t=a^2$:
+\[
+t^3+2pt^2+(p^2-4r)t-q^2=0    
+\]
+\end{document}
