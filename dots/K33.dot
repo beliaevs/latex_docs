@@ -1,5 +1,8 @@
 graph K33
 {
+    node[style=filled]
+    {1, 2, 3 [fillcolor=white]}
+    {4, 5, 6 [fillcolor=dimgrey , fontcolor=white]}
     1--{4, 5, 6}
     2--{4, 5, 6}
     3--{4, 5, 6}
